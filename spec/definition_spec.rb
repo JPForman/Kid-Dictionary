@@ -5,8 +5,8 @@ require('definition')
 describe('.definition') do
 
   before(:each) do
-    Word.clear
-    Definition.clear
+    # Word.clear
+    # Definition.clear
     @word1 = Word.new('trick', nil)
     @word2 = Word.new('text', nil)
     @word1.save
