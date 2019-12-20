@@ -67,4 +67,14 @@ end
     end
   end
 
+  describe('#delete') do
+    it('deletes a definition by id') do
+      definition1 = Definition.new("deceive", @word1.id, nil)
+      definition1.save()
+      definition2 = Definition.new("dodge", @word1.id, nil)
+      definition2.save()
+      definition1.delete()
+      expect(Definition.all).to(eq([definition2]))
+    end
+  end
 end
