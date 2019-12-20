@@ -5,8 +5,8 @@ require('definition')
 describe('.definition') do
 
   before(:each) do
-    # Word.clear
-    # Definition.clear
+    Word.clear
+    Definition.clear
     @word1 = Word.new('trick', nil)
     @word2 = Word.new('text', nil)
     @word1.save
@@ -34,16 +34,16 @@ end
   describe('.save') do
     it('saves a definition for a given word_id') do
       definition1 = Definition.new("deceive", @word1.id, nil)
-      definition.save()
-      expect(@@defi).to(eq([definition1]))
+      definition1.save()
+      expect(Definition.all).to(eq([definition1]))
     end
   end
 
   describe('.clear') do
-    id('clears all definitions for a given word_id') do
+    it('clears all definitions for a given word_id') do
       definition1 = Definition.new("deceive", @word1.id, nil)
       definition1.save()
-      Defition.clear
+      Definition.clear
       expect(Definition.all).to(eq([]))
     end
   end
