@@ -21,4 +21,10 @@ describe('.word') do
     end
   end
 
+  describe ('save') do
+    it('saves a word') do
+      expect(Word.all).to(eq([@word1, @word2]))
+    end
+  end
+
 end
