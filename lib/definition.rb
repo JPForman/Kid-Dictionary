@@ -29,4 +29,8 @@ class Definition
     @@defi[self.id] = Definition.new(self.defi, self.word_id, self.id)
   end
 
+  def self.find(id)
+    @@defi[id]
+  end
+
 end
