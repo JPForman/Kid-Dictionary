@@ -1,5 +1,5 @@
-require 'rspec'
-require 'word'
+require('rspec')
+require('word')
 
 describe('.word') do
 
