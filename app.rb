@@ -26,3 +26,8 @@ end
 get('/dictionary/new') do
   erb(:new_word)
 end
+
+get('/dictionary/:id') do
+  @word = Word.find(params[:id].to_i())
+  erb(:word)
+end
