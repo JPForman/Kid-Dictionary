@@ -19,4 +19,14 @@ class Definition
   def self.all()
     @@defi.values()
   end
+
+  def self.clear
+    @@defi = {}
+    @@total_rows = 0
+  end
+
+  def save()
+    @@defi[self.id] = Definition.new(self.defi, self.word_id, self.id)
+  end
+
 end

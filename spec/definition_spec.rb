@@ -21,11 +21,15 @@ describe('.definition') do
     end
   end
 
-  describe('.all')
-    it('returns all defintions')
+  describe('.all') do
+    it('returns all defintions') do
       definition1 = Definition.new("deceive", @word1.id, nil)
+      definition1.save()
       definition2 = Definition.new("deceive", @word1.id, nil)
+      definition2.save()
       expect(Definition.all).to(eq([definition1, definition2]))
+    end
+end
 
   describe('.save') do
     it('saves a definition for a given word_id') do
@@ -34,4 +38,6 @@ describe('.definition') do
       expect(@@defi).to(eq([definition1]))
     end
   end
+
+
 end
