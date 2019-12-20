@@ -47,4 +47,11 @@ describe('.word') do
     end
   end
 
+  describe ('#delete') do
+    it('deletes a word') do
+      @word1.delete
+      expect(Word.all).to(eq([@word2]))
+    end
+  end
+
 end
