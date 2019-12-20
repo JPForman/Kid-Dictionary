@@ -77,4 +77,17 @@ end
       expect(Definition.all).to(eq([definition2]))
     end
   end
+
+  describe('.find_by_word') do
+    it('find all definitions to a word')
+    @word1 = Word.new('trick', nil)
+    word2 = Word.new('lie', nil)
+    word2.save
+    definition1 = Definition.new("deceive", @word1.id, nil)
+    definition1.save()
+    definition2 = Definition.new("prevaricate", word2.id, nil)
+    definition2.save()
+    expect(Definition.find_by_word(word2.id)).to(eq([definition2]))
+  end
+
 end
