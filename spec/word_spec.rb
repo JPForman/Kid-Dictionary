@@ -32,7 +32,12 @@ describe('.word') do
       Word.clear
       expect(Word.all).to(eq([]))
     end
+  end
 
+  describe ('#find') do
+    it('finds a word by id') do
+      expect(Word.find(@word2.id)).to(eq(@word2))
+    end
   end
 
 end
