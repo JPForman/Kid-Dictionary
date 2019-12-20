@@ -39,5 +39,14 @@ end
     end
   end
 
+  describe('.clear') do
+    id('clears all definitions for a given word_id') do
+      definition1 = Definition.new("deceive", @word1.id, nil)
+      definition1.save()
+      Defition.clear
+      expect(Definition.all).to(eq([]))
+    end
+  end
+
 
 end
