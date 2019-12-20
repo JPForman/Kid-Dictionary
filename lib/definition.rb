@@ -33,4 +33,11 @@ class Definition
     @@defi[id]
   end
 
+  def update(defi, word_id)
+    self.defi = defi
+    self.word_id = word_id
+    @@defi[self.id] = Definition.new(self.defi, self.word_id, self.id)
+  end
+
+
 end
