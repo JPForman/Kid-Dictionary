@@ -48,5 +48,14 @@ end
     end
   end
 
+  describe('.find') do
+    it('finds a defintion by id') do
+      definition1 = Definition.new("deceive", @word1.id, nil)
+      definition1.save()
+      definition2 = Definition.new("dodge", @word1.id, nil)
+      definition2.save()
+      expect(Definition.find(definition1.id)).to(eq(definition1))
+    end
+  end
 
 end
