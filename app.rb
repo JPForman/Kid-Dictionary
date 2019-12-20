@@ -10,13 +10,19 @@ get('/') do
 end
 
 get('/dictionary') do
-  redirect to ('/')
+  @dictionary = Word.all
+  erb(:dictionary)
 end
 
 post('/dictionary') do
   name = params[:word_name]
 
-  word = Word.new(name)
-  word.save
-  redirect to ('/')
+  word = Word.new(name, nil)
+  word.save()
+  @dictionary = Word.all
+  erb(:dictionary)
+end
+
+get('/dictionary/new') do
+  erb(:new_word)
 end
