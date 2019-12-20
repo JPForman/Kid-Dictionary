@@ -1,6 +1,6 @@
 class Word
 
-  @@words = {}
+  @@dictionary = {}
   @@total_rows = 0
 
   attr_reader :id, :name
@@ -11,11 +11,11 @@ class Word
   end
 
   def self.all()
-    @@words.values
+    @@dictionary.values
   end
 
   def save()
-    @@words[self.id] = Word.new(self.name, self.id)
+    @@dictionary[self.id] = Word.new(self.name, self.id)
   end
 
   def ==(other_word)
@@ -23,17 +23,20 @@ class Word
   end
 
   def self.clear
-    @@words = {}
+    @@dictionary = {}
     @@total_rows = 0
   end
 
   def self.find(id)
-    @@words[id]
+    @@dictionary[id]
   end
 
   def update(name)
     @name = (name == "") ? self.name : name
   end
 
+  def delete
+    @@dictionary.delete(self.id)
+  end
 
 end
