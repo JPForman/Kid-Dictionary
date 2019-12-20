@@ -39,5 +39,9 @@ class Definition
     @@defi[self.id] = Definition.new(self.defi, self.word_id, self.id)
   end
 
+  def delete()
+    @@defi.delete(self.id)
+  end
+
 
 end
