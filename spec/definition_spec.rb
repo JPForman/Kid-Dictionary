@@ -58,4 +58,13 @@ end
     end
   end
 
+  describe('#update') do
+    it('updates a definition by id') do
+      definition1 = Definition.new("deceive", @word1.id, nil)
+      definition1.save()
+      definition1.update("hoax", @word1.id)
+      expect(definition1.defi).to(eq("hoax"))
+    end
+  end
+
 end
