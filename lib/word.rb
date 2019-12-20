@@ -39,4 +39,8 @@ class Word
     @@dictionary.delete(self.id)
   end
 
+  def self.sorted()
+    Word.all.sort_by { |word| word.name }
+  end
+
 end

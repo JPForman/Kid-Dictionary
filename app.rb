@@ -5,12 +5,12 @@ require('pry')
 also_reload('lib/**/*.rb')
 
 get('/') do
-  @dictionary = Word.all
+  @dictionary = Word.sorted
   erb(:dictionary)
 end
 
 get('/dictionary') do
-  @dictionary = Word.all
+  @dictionary = Word.sorted
   erb(:dictionary)
 end
 
@@ -19,7 +19,7 @@ post('/dictionary') do
 
   word = Word.new(name, nil)
   word.save()
-  @dictionary = Word.all
+  @dictionary = Word.sorted
   erb(:dictionary)
 end
 
