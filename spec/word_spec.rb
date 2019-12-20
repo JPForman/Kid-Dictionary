@@ -40,4 +40,11 @@ describe('.word') do
     end
   end
 
+  describe ('#update') do
+    it('updates a word by id') do
+      @word1.update('treat', nil)
+      expect(@word1.name).to(eq('treat'))
+    end
+  end
+
 end
