@@ -31,7 +31,9 @@ class Word
     @@words[id]
   end
 
-
+  def update(name)
+    @name = (name == "") ? self.name : name
+  end
 
 
 end
