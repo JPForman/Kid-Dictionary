@@ -21,10 +21,18 @@ describe('.word') do
     end
   end
 
-  describe ('save') do
+  describe ('#save') do
     it('saves a word') do
       expect(Word.all).to(eq([@word1, @word2]))
     end
+  end
+
+  describe ('#clear') do
+    it('clears all words') do
+      Word.clear
+      expect(Word.all).to(eq([]))
+    end
+
   end
 
 end
