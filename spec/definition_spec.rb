@@ -93,9 +93,10 @@ describe('.definition') do
   end
 
   describe('.word') do
-    it('finds the word a definition belongs to')
-    definition1 = Definition.new("deceive", @word1.id, nil)
-    definition1.save()
-    expect(definition.word).to(eq(@word1))
+    it('finds the word a definition belongs to') do
+      definition1 = Definition.new("deceive", @word1.id, nil)
+      definition1.save()
+      expect(definition1.word).to(eq(@word1))
+    end
   end
 end

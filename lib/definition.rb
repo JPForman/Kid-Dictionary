@@ -53,4 +53,7 @@ class Definition
     defis
   end
 
+  def word
+    Word.find(self.word_id)
+  end
 end
