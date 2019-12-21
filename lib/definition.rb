@@ -43,5 +43,14 @@ class Definition
     @@defi.delete(self.id)
   end
 
+  def self.find_by_word(word_id)
+    defis = []
+    @@defi.values.each do |defi|
+      if defi.word_id == word_id
+        defis.push(defi)
+      end
+    end
+    defis
+  end
 
 end
