@@ -43,4 +43,8 @@ class Word
     Word.all.sort_by { |word| word.name }
   end
 
+  def definitions
+    Definition.find_by_word(self.id)
+  end
+
 end

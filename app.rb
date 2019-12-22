@@ -31,3 +31,27 @@ get('/dictionary/:id') do
   @word = Word.find(params[:id].to_i())
   erb(:word)
 end
+
+get('/dictionary/:id/edit') do
+  @word = Word.find(params[:id].to_i())
+  erb(:edit_word)
+end
+
+patch('/dictionary/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update(params[:word_name])
+  @dictionary = Word.sorted
+  erb(:dictionary)
+end
+
+delete('/dictionary/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.delete()
+  @dictionary = Word.sorted
+  erb(:albums)
+end
+
+get('dictionary/:id/definition/:definition_id') do
+  @definition = Definition.find(params[:definition_id].to_i())
+  erb(:definition)
+end
