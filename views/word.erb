@@ -2,12 +2,22 @@
 
 <h3>Definitions</h3>
 
-  <% if @word.definitions %>
-    <ul>
-      <% @word.definitions.each do |definition| %>
-        <li><a href="/dictionary/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.name %></a></li>
-      <% end %>
-    </ul>
-  <% else %>
-    <h4>There are no definitions for this word yet.</h4>
-  <% end %>
+<% if @word.definitions %>
+  <ul>
+    <% @word.definitions.each do |definition| %>
+    <li><a href="/dictionary/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.defi %></a></li>
+    <%end %>
+  </ul>
+<% else %>
+  <h3>There are no current definitions for this word.</h3>
+<% end %>
+
+
+
+<h4>Add a defintion for this word</h4>
+
+<form action="/dictionary/<%= @word.id %>/definitions" method="post">
+  <label for="definition">Definiton</label>
+  <input type="text" name="definition_name">
+  <button type="submit">Add Definition</button>
+</form>

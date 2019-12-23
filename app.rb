@@ -1,9 +1,11 @@
 require('sinatra')
 require('sinatra/reloader')
 require('./lib/word')
+require('./lib/definition')
 require('pry')
 also_reload('lib/**/*.rb')
 
+# Dictionary and Word Routing
 get('/') do
   @dictionary = Word.sorted
   erb(:dictionary)
@@ -48,10 +50,33 @@ delete('/dictionary/:id') do
   @word = Word.find(params[:id].to_i())
   @word.delete()
   @dictionary = Word.sorted
-  erb(:albums)
+  erb(:dictionary)
 end
 
-get('dictionary/:id/definition/:definition_id') do
+#Definition Routing
+
+get('/dictionary/:id/definitions/:definition_id') do
   @definition = Definition.find(params[:definition_id].to_i())
   erb(:definition)
+end
+
+post('/dictionary/:id/definitions') do
+  @word = Word.find(params[:id].to_i())
+  definition = Definition.new(params[:definition_name], @word.id, nil)
+  definition.save()
+  erb(:word)
+end
+
+patch('/dictionary/:id/definitions/:definition_id') do
+  @word = Word.find(params[:id].to_i())
+  definition = Definition.find(params[:definition_id].to_i())
+  definition.update(params[:name], @word.id)
+  erb(:word)
+end
+
+delete('/dictionary/:id/definitions/:definition_id') do
+  definition = Definition.find(params[:definition_id].to_i())
+  definition.delete
+  @word = Word.find(params[:id].to_i())
+  erb(:word)
 end
