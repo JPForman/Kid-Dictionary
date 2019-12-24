@@ -30,7 +30,7 @@ _go to https://cryptic-fjord-62888.herokuapp.com/ ._
 _or_
 
 _Using command line:_
-* _$ git clone https://github.com/JPForman/Anagrams-and-Antigrams.git_ ._
+* _$ git clone https://github.com/JPForman/Anagrams-and-Antigrams.git_
 * _$ bundle install_
 * _navigate to the root directory of the program_
 * _$ ruby app.rb_
@@ -46,7 +46,7 @@ _Ruby, Sonatra, rspec_
 
 
 ### Known Bugs
-_needs styling_
+_needs styling_  
 _sorting has case sensitivity bug_
 
 ### License
