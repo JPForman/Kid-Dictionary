@@ -1,0 +1,33 @@
+body {
+  background-image: url('scrabble.jpg');
+}
+
+.background {
+  background-image: url('scrabble.jpg');
+}
+
+.body {
+  color: black;
+  border: 4px solid black;
+  padding: 1%;
+  background: grey;
+}
+
+.header {
+  color: Grey;
+  border: 4px solid black;
+}
+
+.title {
+  color: black;
+  font-style: italic;
+  font-family: cursive;
+  text-align: center;
+  font-size: 100px;
+  text-shadow: 2px 2px white;
+}
+.word {
+  color: orange;
+  font-size: 35px;
+  font-family: cursive;
+}

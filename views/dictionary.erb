@@ -1,17 +1,21 @@
-<div class="jumbotron">
-  <h1 class="header">Kid Dictionary</h1>
+<div class="jumbotron header">
+  <h1 class='title'>Kid Dictionary</h1>
 </div>
 
-<h3>Here is a list of words kids have entered: </h3>
+<div class="body">
 
-<% if @dictionary.any? %>
+  <h3>Here is a list of words kids have entered: </h3>
+
+  <% if @dictionary.any? %>
   <ul>
     <% @dictionary.each do |word| %>
-    <li><a href="/dictionary/<%= word.id %>"> <%= word.name %></a></li>
+    <li><a class="word" href="/dictionary/<%= word.id %>"> <%= word.name %></a></li>
     <% end %>
   </ul>
-<% else %>
-<h2>There are no words to display...except these of course.</h2>
-<% end %>
+  <% else %>
+  <h2>There are no words to display...except these of course.</h2>
+  <% end %>
 
-<a href='/dictionary/new'>Add a new word :)</a>
+  <a href='/dictionary/new'>Add a new word :)</a>
+
+</div>
